@@ -968,19 +968,30 @@
             }
         });
         
-       // Language switch
+      // Language switch function
 function switchLanguage(lang) {
+    console.log('Switching to:', lang); // Debug line
+    
+    // Toggle body class
     document.body.classList.toggle('spanish', lang === 'es');
+    
+    // Update button states
     document.getElementById('lang-en').classList.toggle('language-active', lang === 'en');
     document.getElementById('lang-es').classList.toggle('language-active', lang === 'es');
+    
+    // Store preference
     localStorage.setItem('preferredLanguage', lang);
 }
 
+// Event listeners for buttons
+document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
+
 // Initialize language
 document.addEventListener('DOMContentLoaded', function() {
-    switchLanguage(localStorage.getItem('preferredLanguage') || 'en');
+    const lang = localStorage.getItem('preferredLanguage') || 'en';
+    switchLanguage(lang);
 });
-
         }
         
         // Item click handlers
