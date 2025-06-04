@@ -193,12 +193,39 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Language Switcher -->
-    <div class="fixed top-4 right-4 z-50 flex space-x-2 rounded-full overflow-hidden shadow-lg bg-white">
-        <button id="lang-en" class="language-switch language-active px-4 py-2 font-medium">English</button>
-        <button id="lang-es" class="language-switch px-4 py-2 font-medium">Español</button>
+  <!-- Fixed Navigation Menu -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo/Title -->
+            <div class="flex-shrink-0 flex items-center">
+                <span class="text-xl font-bold text-blue-900 en">Gypsy Moon</span>
+                <span class="text-xl font-bold text-blue-900 es">Luna Gitana</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#traditions" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium transition en">Traditions</a>
+                <a href="#traditions" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium es">Tradiciones</a>
+                
+                <a href="#gallery" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium en">Gallery</a>
+                <a href="#gallery" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium es">Galería</a>
+                
+                <a href="#about" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium en">About</a>
+                <a href="#about" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium es">Nosotros</a>
+                
+                <a href="#contact" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium en">Contact</a>
+                <a href="#contact" class="text-gray-700 hover:text-red-800 px-3 py-2 rounded-md text-sm font-medium es">Contacto</a>
+            </div>
+            
+            <!-- Language Switcher -->
+            <div class="flex items-center space-x-2">
+                <button id="lang-en" class="language-switch language-active px-3 py-1 text-sm font-medium">English</button>
+                <button id="lang-es" class="language-switch px-3 py-1 text-sm font-medium">Español</button>
+            </div>
+        </div>
     </div>
-
+</nav>
     <!-- Hero Section -->
     <section id="home" class="hero-bg">
         <!-- Image collage -->
@@ -219,26 +246,7 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-col items-center">
                     <!-- Navigation buttons -->
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#traditions" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
-                            Our Traditions
-                        </a>
-                        <a href="#gallery" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition en">
-                            Gallery
-                        </a>
-                        <a href="#contact" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
-                            Contact Us
-                        </a>
-                        
-                        <a href="#traditions" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
-                            Nuestras Tradiciones
-                        </a>
-                        <a href="#gallery" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition es">
-                            Galería
-                        </a>
-                        <a href="#contact" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
-                            Contacto
-                        </a>
+                    
                     </div>
                 </div>
             </div>
