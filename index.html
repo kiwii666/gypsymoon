@@ -16,44 +16,83 @@
         }
         
        <style>
-    .hero-bg {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%);
-    }
+    ..hero-bg {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(139, 0, 0, 0.6) 0%, rgba(0, 0, 139, 0.8) 100%);
+}
 
-    .hero-collage {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-        gap: 4px;
-        z-index: -1;
-        opacity: 0.7;
-    }
+.hero-collage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    z-index: 0;
+}
 
-    .collage-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
+.collage-img {
+    position: absolute;
+    width: 28%;
+    height: 28%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    filter: brightness(0.85) saturate(1.1);
+}
 
-    .collage-img:hover {
-        transform: scale(1.05);
-        z-index: 1;
-    }
+/* Logo as centerpiece */
+.img-logo {
+    width: 30%;
+    height: auto;
+    max-height: 40%;
+    z-index: 10;
+    filter: brightness(1) drop-shadow(0 0 10px var(--accent-gold));
+    border: 3px solid var(--accent-gold);
+    border-radius: 50%;
+    animation: pulse 4s infinite alternate;
+}
 
-    /* Position each image in the grid */
-    .img1 { grid-area: 1 / 1 / span 3 / span 4; }
-    .img2 { grid-area: 2 / 5 / span 3 / span 4; }
-    .img3 { grid-area: 4 / 3 / span 3 / span 3; }
-    .img4 { grid-area: 5 / 7 / span 3 / span 4; }
-    .img5 { grid-area: 1 / 9 / span 4 / span 4; }
+/* Radial positioning for other images */
+.img1 { top: 15%; left: 10%; transform: rotate(-5deg); }
+.img2 { top: 10%; right: 10%; transform: rotate(3deg); }
+.img3 { bottom: 15%; left: 12%; transform: rotate(-2deg); }
+.img4 { bottom: 10%; right: 12%; transform: rotate(5deg); }
+.img5 { top: 50%; left: 5%; transform: translateY(-50%) rotate(-3deg); }
+.img6 { top: 50%; right: 5%; transform: translateY(-50%) rotate(2deg); }
+.img7 { top: 25%; left: 50%; transform: translateX(-50%) rotate(4deg); }
+.img8 { bottom: 25%; left: 50%; transform: translateX(-50%) rotate(-4deg); }
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px var(--accent-gold); }
+    100% { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-gold); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.hero-content h1 {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+}
 </style>
 </head>
 <body class="bg-gray-50">
@@ -121,54 +160,51 @@
 
     <!-- Hero Section -->
    <!-- Hero Section -->
-<section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
-    <!-- Image Collage Grid -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section id="home" class="hero-bg">
+    <!-- Radial collage with logo centerpiece -->
     <div class="hero-collage">
+        <!-- Logo as center focus -->
+        <img src="images/background stock images/logo.jpg" alt="Gypsy Moon Logo" class="collage-img img-logo">
+        
+        <!-- Surrounding spiritual images -->
         <img src="images/background stock images/buddha 2.jpg" alt="Buddha" class="collage-img img1">
         <img src="images/background stock images/buddha.jpg" alt="Buddha" class="collage-img img2">
-        <img src="images/background stock images/christ.jpg" alt="Christ" class="collage-img img3">
-        <img src="images/background stock images/death.jpg" alt="Santa Muerte" class="collage-img img4">
-        <img src="images/background stock images/wicaan.jpg" alt="Wiccan" class="collage-img img5">
+        <img src="images/background stock images/japan.jpg" alt="Japanese" class="collage-img img3">
+        <img src="images/background stock images/chirst.jpg" alt="Christ" class="collage-img img4">
+        <img src="images/background stock images/death.jpg" alt="Santa Muerte" class="collage-img img5">
+        <img src="images/background stock images/muertos.jpg" alt="Muertos" class="collage-img img6">
+        <img src="images/background stock images/wicaan.jpg" alt="Wiccan" class="collage-img img7">
     </div>
-    
-    <div class="max-w-7xl mx-auto text-center px-4 relative z-10">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 en">
+
+    <!-- Content overlaying the images -->
+    <div class="hero-content">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 en animate__animated animate__fadeIn">
             Spiritual Goods for All Paths
         </h1>
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 es">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 es animate__animated animate__fadeIn">
             Productos Espirituales para Todos los Caminos
         </h1>
         
-        <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 max-w-3xl mx-auto mb-8">
-            <p class="text-lg md:text-xl mb-6 en">
-                Serving Las Vegas with authentic religious and spiritual supplies since 2015. 
-                From Santería candles to Wiccan herbs, we honor all traditions.
-            </p>
-            <p class="text-lg md:text-xl mb-6 es">
-                Sirviendo a Las Vegas con suministros religiosos y espirituales auténticos desde 2015.
-                Desde velas de Santería hasta hierbas de Wicca, honramos todas las tradiciones.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="/shop" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
-                    Explore Our Shop
-                </a>
-                <a href="/belief-systems" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition en">
-                    View Traditions
-                </a>
-                
-                <a href="/shop" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
-                    Explorar Tienda
-                </a>
-                <a href="/belief-systems" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition es">
-                    Ver Tradiciones
-                </a>
-            </div>
+        <!-- Rest of your hero content remains unchanged -->
+        [Your existing buttons and text content]
+    </div>
+</section>
+        
+        <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 max-w-3xl mx-auto mb-8 animate__animated animate__fadeInUp">
+            <!-- Rest of your existing hero content -->
+            [Keep all your existing buttons and text here]
         </div>
         
-        <div class="flex justify-center mt-8">
+        <div class="flex justify-center mt-8 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="bg-blue-900 p-4 rounded-full floating">
                 <i class="fas fa-arrow-down text-white text-2xl"></i>
+            </div>
+        </div>
+    </div>
+</section>
             </div>
         </div>
     </div>
