@@ -17,43 +17,41 @@
         
        <style>
     .hero-bg {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%);
-    }
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%);
+}
 
-    .hero-collage {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-        gap: 4px;
-        z-index: -1;
-        opacity: 0.7;
-    }
+.hero-collage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 4px;
+    z-index: 0;
+    opacity: 0.7;
+}
 
-    .collage-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
+.collage-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    filter: brightness(0.85);
+}
 
-    .collage-img:hover {
-        transform: scale(1.05);
-        z-index: 1;
-    }
-
-    /* Position each image in the grid */
-    .img1 { grid-area: 1 / 1 / span 3 / span 4; }
-    .img2 { grid-area: 2 / 5 / span 3 / span 4; }
-    .img3 { grid-area: 4 / 3 / span 3 / span 3; }
-    .img4 { grid-area: 5 / 7 / span 3 / span 4; }
-    .img5 { grid-area: 1 / 9 / span 4 / span 4; }
+/* New optimized image positions */
+.img1 { grid-area: 1 / 1 / span 4 / span 3; }  /* Top-left */
+.img2 { grid-area: 1 / 4 / span 3 / span 3; }  /* Top-middle */
+.img3 { grid-area: 1 / 10 / span 4 / span 3; } /* Top-right */
+.img4 { grid-area: 5 / 1 / span 4 / span 4; }  /* Bottom-left */
+.img5 { grid-area: 4 / 5 / span 3 / span 3; }  /* Center */
+.img6 { grid-area: 5 / 8 / span 4 / span 3; }  /* Bottom-middle */
+.img7 { grid-area: 4 / 11 / span 3 / span 2; } /* Right edge */
 </style>
 </head>
 <body class="bg-gray-50">
@@ -121,17 +119,24 @@
 
     <!-- Hero Section -->
    <!-- Hero Section -->
+<!-- Hero Section -->
 <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
-    <!-- Image Collage Grid -->
+    <!-- Image Collage Grid - Now with 7 images -->
     <div class="hero-collage">
         <img src="images/background stock images/buddha 2.jpg" alt="Buddha" class="collage-img img1">
         <img src="images/background stock images/buddha.jpg" alt="Buddha" class="collage-img img2">
-        <img src="images/background stock images/christ.jpg" alt="Christ" class="collage-img img3">
-        <img src="images/background stock images/death.jpg" alt="Santa Muerte" class="collage-img img4">
-        <img src="images/background stock images/wicaan.jpg" alt="Wiccan" class="collage-img img5">
+        <img src="images/background stock images/japan.jpg" alt="Japanese spiritual" class="collage-img img3">
+        <img src="images/background stock images/chirst.jpg" alt="Christ" class="collage-img img4">
+        <img src="images/background stock images/death.jpg" alt="Santa Muerte" class="collage-img img5">
+        <img src="images/background stock images/muertos.jpg" alt="Dia de Muertos" class="collage-img img6">
+        <img src="images/background stock images/wicaan.jpg" alt="Wiccan" class="collage-img img7">
     </div>
     
     <div class="max-w-7xl mx-auto text-center px-4 relative z-10">
+        <!-- Your existing hero content remains unchanged here -->
+        [...]
+    </div>
+</section>
         <h1 class="text-4xl md:text-6xl font-bold mb-6 en">
             Spiritual Goods for All Paths
         </h1>
