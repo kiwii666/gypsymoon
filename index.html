@@ -16,7 +16,12 @@
         }
         
         <style>
-    /* Update the hero-bg class to use your images */
+    :root {
+        --primary-red: #8b0000;
+        --primary-blue: #00008b;
+        --accent-gold: #d4af37;
+    }
+    
     .hero-bg {
         background: 
             linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%),
@@ -33,25 +38,25 @@
         overflow: hidden;
     }
 
-    /* Remove or comment out the existing ::after pseudo-element as we'll use your images directly */
-    /*
-    .hero-bg::after {
+    .hero-bg::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: 
-            url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80') center/cover no-repeat,
-            url('https://images.unsplash.com/photo-1563387852576-964bc31d744d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80') center/cover no-repeat,
-            url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80') center/cover no-repeat;
-        background-blend-mode: overlay;
-        opacity: 0.15;
-        mix-blend-mode: multiply;
-        z-index: -1;
+        background: rgba(0, 0, 0, 0.4); /* Dark overlay to improve text contrast */
+        z-index: 0;
     }
-    */
+
+    /* Rest of your existing CSS styles... */
+    .belief-card {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    /* ... continue with all your other existing styles ... */
 </style>
         }
 
