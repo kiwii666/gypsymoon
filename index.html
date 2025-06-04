@@ -178,6 +178,29 @@
             visibility: visible;
             opacity: 1;
         }
+        
+        /* Gallery styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -203,151 +226,36 @@
         </div>
 
         <!-- Hero content -->
-      
-                
-                <!-- Navigation buttons -->
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#gallery" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
-                        View Gallery
-                    </a>
-                    <a href="#traditions" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition en">
-                        Our Traditions
-                    </a>
-                    <a href="#contact" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
-                        Contact Us
-                    </a>
-                    
-                    <a href="#gallery" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
-                        Ver Galería
-                    </a>
-                    <a href="#traditions" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition es">
-                        Nuestras Tradiciones
-                    </a>
-                    <a href="#contact" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
-                        Contacto
-                    </a>
-                </div>
-            </div>
-            
-            <div class="flex justify-center mt-8">
-                <div class="bg-blue-900 p-4 rounded-full floating">
-                    <i class="fas fa-arrow-down text-white text-2xl"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Gallery -->
-    <section id="gallery" class="py-16 bg-gradient-to-b from-blue-900 to-blue-950 text-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 en">
-                Our Sacred Collection
-            </h2>
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 es">
-                Nuestra Colección Sagrada
-            </h2>
-            
-            <p class="text-center text-blue-200 mb-12 max-w-3xl mx-auto en">
-                Explore our carefully curated spiritual items, each crafted with sacred intention
-            </p>
-            <p class="text-center text-blue-200 mb-12 max-w-3xl mx-auto es">
-                Explora nuestros artículos espirituales cuidadosamente seleccionados, cada uno creado con intención sagrada
-            </p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Collection Item 1 -->
-                <div class="belief-card transform transition-all duration-500 hover:scale-105">
-                    <div class="relative h-80 overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
-                             alt="7 African Powers Candle" 
-                             class="w-full h-full object-cover transition duration-700 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <div>
-                                <h3 class="font-bold text-xl mb-1">7 African Powers Candle</h3>
-                                <p class="text-blue-100 text-sm en">Traditional Santería candle for protection and blessings</p>
-                                <p class="text-blue-100 text-sm es">Vela tradicional de Santería para protección y bendiciones</p>
-                            </div>
-                        </div>
+        <div class="hero-text">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col items-center">
+                    <!-- Navigation buttons -->
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#traditions" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
+                            Our Traditions
+                        </a>
+                        <a href="#gallery" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition en">
+                            Gallery
+                        </a>
+                        <a href="#contact" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
+                            Contact Us
+                        </a>
+                        
+                        <a href="#traditions" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
+                            Nuestras Tradiciones
+                        </a>
+                        <a href="#gallery" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition es">
+                            Galería
+                        </a>
+                        <a href="#contact" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
+                            Contacto
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Collection Item 2 -->
-                <div class="belief-card transform transition-all duration-500 hover:scale-105">
-                    <div class="relative h-80 overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1526402972127-ee902c89ed11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
-                             alt="Santa Muerte Statue" 
-                             class="w-full h-full object-cover transition duration-700 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <div>
-                                <h3 class="font-bold text-xl mb-1">Santa Muerte Statue</h3>
-                                <p class="text-blue-100 text-sm en">Hand-painted 8" statue, dressed in red</p>
-                                <p class="text-blue-100 text-sm es">Estatua de 8 pulgadas pintada a mano, vestida de rojo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 3 -->
-                <div class="belief-card transform transition-all duration-500 hover:scale-105">
-                    <div class="relative h-80 overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1542903660-eedba2cda47e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
-                             alt="Palo Santo Bundle" 
-                             class="w-full h-full object-cover transition duration-700 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <div>
-                                <h3 class="font-bold text-xl mb-1">Palo Santo Bundle</h3>
-                                <p class="text-blue-100 text-sm en">Sustainable harvested with natural resin</p>
-                                <p class="text-blue-100 text-sm es">Cosechado sostenible con resina natural</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 4 -->
-                <div class="belief-card transform transition-all duration-500 hover:scale-105">
-                    <div class="relative h-80 overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1588591795085-0ac7bac165c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
-                             alt="Wiccan Starter Kit" 
-                             class="w-full h-full object-cover transition duration-700 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <div>
-                                <h3 class="font-bold text-xl mb-1">Wiccan Starter Kit</h3>
-                                <p class="text-blue-100 text-sm en">Crystals, herbs, candles, and guidebook</p>
-                                <p class="text-blue-100 text-sm es">Cristales, hierbas, velas y guía</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 5 -->
-                <div class="belief-card transform transition-all duration-500 hover:scale-105">
-                    <div class="relative h-80 overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1563387852576-964bc31d744d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                             alt="Catholic Rosary" 
-                             class="w-full h-full object-cover transition duration-700 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <div>
-                                <h3 class="font-bold text-xl mb-1">Prayer Rosary</h3>
-                                <p class="text-blue-100 text-sm en">Hand-beaded with silver crucifix</p>
-                                <p class="text-blue-100 text-sm es">Cuentas con crucifijo de plata</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 6 -->
-                <div class="belief-card transform transition-all duration-500 hover:scale-105">
-                    <div class="relative h-80 overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80" 
-                             alt="Buddhist Mala" 
-                             class="w-full h-full object-cover transition duration-700 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <div>
-                                <h3 class="font-bold text-xl mb-1">Bodhi Seed Mala</h3>
-                                <p class="text-blue-100 text-sm en">108 beads for meditation and prayer</p>
-                                <p class="text-blue-100 text-sm es">108 cuentas para meditación y oración</p>
-                            </div>
-                        </div>
+                <div class="flex justify-center mt-8">
+                    <div class="bg-blue-900 p-4 rounded-full floating">
+                        <i class="fas fa-arrow-down text-white text-2xl"></i>
                     </div>
                 </div>
             </div>
@@ -355,7 +263,7 @@
     </section>
 
     <!-- Traditions We Serve -->
-    <section id="traditions" class="py-16 bg-white">
+    <section id="traditions" class="py-16 bg-gradient-to-b from-blue-900 to-blue-950 text-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 en">
                 Traditions We Serve
@@ -560,6 +468,83 @@
                             <span class="tooltiptext">Tabaco sagrado, atrapasueños, plumas para sahumar</span>
                         </h3>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 en">
+                Gallery
+            </h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 es">
+                Galería
+            </h2>
+            
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto en">
+                Browse through our collection of spiritual goods and sacred spaces
+            </p>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto es">
+                Explora nuestra colección de productos espirituales y espacios sagrados
+            </p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
+                         alt="Santería Altar" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1526402972127-ee902c89ed11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
+                         alt="Santa Muerte Statue" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542903660-eedba2cda47e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
+                         alt="Palo Santo" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1588591795085-0ac7bac165c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" 
+                         alt="Wiccan Tools" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1563387852576-964bc31d744d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Rosary" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80" 
+                         alt="Buddhist Mala" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518630351222-b3563a3d648b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Hoodoo Items" 
+                         class="gallery-img">
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                         alt="Hindu Items" 
+                         class="gallery-img">
                 </div>
             </div>
         </div>
