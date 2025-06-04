@@ -16,14 +16,14 @@
         }
         
        <style>
-    ..hero-bg {
+    .hero-bg {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, rgba(139, 0, 0, 0.6) 0%, rgba(0, 0, 139, 0.8) 100%);
+    background: radial-gradient(circle at center, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.9) 100%);
 }
 
 .hero-collage {
@@ -33,65 +33,73 @@
     width: 100%;
     height: 100%;
     display: grid;
-    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0; /* No gap between images */
     z-index: 0;
 }
 
 .collage-img {
-    position: absolute;
-    width: 28%;
-    height: 28%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.5s ease;
-    filter: brightness(0.85) saturate(1.1);
+    transition: all 0.3s ease;
+    filter: brightness(0.8);
 }
 
-/* Logo as centerpiece */
+/* Position each image to create touching collage */
+.img1 { grid-area: 1 / 1 / span 1 / span 1; } /* Top-left */
+.img2 { grid-area: 1 / 2 / span 1 / span 1; } /* Top-center */
+.img3 { grid-area: 1 / 3 / span 1 / span 1; } /* Top-right */
+.img4 { grid-area: 2 / 1 / span 1 / span 1; } /* Middle-left */
+.img5 { grid-area: 2 / 3 / span 1 / span 1; } /* Middle-right */
+.img6 { grid-area: 3 / 1 / span 1 / span 1; } /* Bottom-left */
+.img7 { grid-area: 3 / 2 / span 1 / span 1; } /* Bottom-center */
+.img8 { grid-area: 3 / 3 / span 1 / span 1; } /* Bottom-right */
+
+/* Logo as centerpiece - sits in the empty center grid cell */
 .img-logo {
+    position: absolute;
     width: 30%;
     height: auto;
     max-height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
-    filter: brightness(1) drop-shadow(0 0 10px var(--accent-gold));
-    border: 3px solid var(--accent-gold);
+    filter: brightness(1) drop-shadow(0 0 15px var(--accent-gold));
+    border: 4px solid var(--accent-gold);
     border-radius: 50%;
-    animation: pulse 4s infinite alternate;
+    animation: pulse 3s infinite alternate;
 }
-
-/* Radial positioning for other images */
-.img1 { top: 15%; left: 10%; transform: rotate(-5deg); }
-.img2 { top: 10%; right: 10%; transform: rotate(3deg); }
-.img3 { bottom: 15%; left: 12%; transform: rotate(-2deg); }
-.img4 { bottom: 10%; right: 12%; transform: rotate(5deg); }
-.img5 { top: 50%; left: 5%; transform: translateY(-50%) rotate(-3deg); }
-.img6 { top: 50%; right: 5%; transform: translateY(-50%) rotate(2deg); }
-.img7 { top: 25%; left: 50%; transform: translateX(-50%) rotate(4deg); }
-.img8 { bottom: 25%; left: 50%; transform: translateX(-50%) rotate(-4deg); }
 
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 10px var(--accent-gold); }
-    100% { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-gold); }
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(1.05); }
 }
 
-.hero-content {
+#home {
+    min-height: 100vh;
+    margin-bottom: 0;
+}
+
+#gallery {
     position: relative;
-    z-index: 20;
-    text-align: center;
-    padding: 2rem;
-    max-width: 1200px;
+    z-index: 5;
+    margin-top: 0;
+    padding-top: 4rem;
 }
 
-.hero-content h1 {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    display: inline-block;
-    padding: 1.5rem 3rem;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    margin-bottom: 2rem;
+/* Fix for any absolute positioning issues */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, var(--primary-blue));
+    z-index: 2;
 }
 </style>
 </head>
@@ -163,33 +171,33 @@
 <!-- Hero Section -->
 <!-- Hero Section -->
 <!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
 <section id="home" class="hero-bg">
-    <!-- Radial collage with logo centerpiece -->
+    <!-- Tight collage grid with no gaps -->
     <div class="hero-collage">
-        <!-- Logo as center focus -->
-        <img src="images/background stock images/logo.jpg" alt="Gypsy Moon Logo" class="collage-img img-logo">
+        <!-- 8 surrounding images -->
+        <img src="images/background stock images/buddha 2.jpg" class="collage-img img1">
+        <img src="images/background stock images/buddha.jpg" class="collage-img img2">
+        <img src="images/background stock images/japan.jpg" class="collage-img img3">
+        <img src="images/background stock images/christ.jpg" class="collage-img img4">
+        <img src="images/background stock images/death.jpg" class="collage-img img5">
+        <img src="images/background stock images/muertos.jpg" class="collage-img img6">
+        <img src="images/background stock images/wicaan.jpg" class="collage-img img7">
+        <img src="images/background stock images/crystal.jpg" class="collage-img img8">
         
-        <!-- Surrounding spiritual images -->
-        <img src="images/background stock images/buddha 2.jpg" alt="Buddha" class="collage-img img1">
-        <img src="images/background stock images/buddha.jpg" alt="Buddha" class="collage-img img2">
-        <img src="images/background stock images/japan.jpg" alt="Japanese" class="collage-img img3">
-        <img src="images/background stock images/chirst.jpg" alt="Christ" class="collage-img img4">
-        <img src="images/background stock images/death.jpg" alt="Santa Muerte" class="collage-img img5">
-        <img src="images/background stock images/muertos.jpg" alt="Muertos" class="collage-img img6">
-        <img src="images/background stock images/wicaan.jpg" alt="Wiccan" class="collage-img img7">
+        <!-- Centered logo -->
+        <img src="images/background stock images/logo.jpeg" class="collage-img img-logo">
     </div>
 
-    <!-- Content overlaying the images -->
-    <div class="hero-content">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 en animate__animated animate__fadeIn">
+    <!-- Text positioned above logo -->
+    <div class="hero-text">
+        <h1 class="text-4xl md:text-5xl font-bold text-white en">
             Spiritual Goods for All Paths
         </h1>
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 es animate__animated animate__fadeIn">
+        <h1 class="text-4xl md:text-5xl font-bold text-white es">
             Productos Espirituales para Todos los Caminos
         </h1>
-        
-        <!-- Rest of your hero content remains unchanged -->
-        [Your existing buttons and text content]
     </div>
 </section>
         
