@@ -19,7 +19,11 @@
     .hero-bg {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.6) 0%, rgba(0, 0, 139, 0.6) 100%);
 }
 
 .hero-collage {
@@ -29,29 +33,48 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
     z-index: 0;
-    opacity: 0.7;
 }
 
 .collage-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-    filter: brightness(0.85);
+    transition: all 0.4s ease;
+    filter: brightness(0.8);
 }
 
-/* New optimized image positions */
-.img1 { grid-area: 1 / 1 / span 4 / span 3; }  /* Top-left */
-.img2 { grid-area: 1 / 4 / span 3 / span 3; }  /* Top-middle */
-.img3 { grid-area: 1 / 10 / span 4 / span 3; } /* Top-right */
-.img4 { grid-area: 5 / 1 / span 4 / span 4; }  /* Bottom-left */
-.img5 { grid-area: 4 / 5 / span 3 / span 3; }  /* Center */
-.img6 { grid-area: 5 / 8 / span 4 / span 3; }  /* Bottom-middle */
-.img7 { grid-area: 4 / 11 / span 3 / span 2; } /* Right edge */
+/* Tight collage layout with overlapping images */
+.img1 { grid-area: 1 / 1 / span 2 / span 2; transform: rotate(-2deg); }
+.img2 { grid-area: 1 / 3 / span 1 / span 2; transform: rotate(1deg); }
+.img3 { grid-area: 2 / 2 / span 2 / span 2; transform: rotate(3deg); z-index: 1; }
+.img4 { grid-area: 3 / 1 / span 1 / span 2; transform: rotate(-1deg); }
+.img5 { grid-area: 2 / 4 / span 2 / span 1; transform: rotate(2deg); }
+.img6 { grid-area: 1 / 4 / span 1 / span 1; transform: rotate(-3deg); }
+.img7 { grid-area: 3 / 3 / span 1 / span 2; transform: rotate(1deg); }
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Text styling enhancement */
+.hero-content h1 {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 </style>
 </head>
 <body class="bg-gray-50">
@@ -120,60 +143,40 @@
     <!-- Hero Section -->
    <!-- Hero Section -->
 <!-- Hero Section -->
-<section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
-    <!-- Image Collage Grid - Now with 7 images -->
+<!-- Hero Section -->
+<section id="home" class="hero-bg">
+    <!-- Tight image collage with 7 images -->
     <div class="hero-collage">
         <img src="images/background stock images/buddha 2.jpg" alt="Buddha" class="collage-img img1">
         <img src="images/background stock images/buddha.jpg" alt="Buddha" class="collage-img img2">
-        <img src="images/background stock images/japan.jpg" alt="Japanese spiritual" class="collage-img img3">
+        <img src="images/background stock images/japan.jpg" alt="Japanese" class="collage-img img3">
         <img src="images/background stock images/chirst.jpg" alt="Christ" class="collage-img img4">
         <img src="images/background stock images/death.jpg" alt="Santa Muerte" class="collage-img img5">
-        <img src="images/background stock images/muertos.jpg" alt="Dia de Muertos" class="collage-img img6">
+        <img src="images/background stock images/muertos.jpg" alt="Muertos" class="collage-img img6">
         <img src="images/background stock images/wicaan.jpg" alt="Wiccan" class="collage-img img7">
     </div>
-    
-    <div class="max-w-7xl mx-auto text-center px-4 relative z-10">
-        <!-- Your existing hero content remains unchanged here -->
-        [...]
-    </div>
-</section>
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 en">
+
+    <!-- Content overlaying the images -->
+    <div class="hero-content">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 en animate__animated animate__fadeIn">
             Spiritual Goods for All Paths
         </h1>
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 es">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 es animate__animated animate__fadeIn">
             Productos Espirituales para Todos los Caminos
         </h1>
         
-        <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 max-w-3xl mx-auto mb-8">
-            <p class="text-lg md:text-xl mb-6 en">
-                Serving Las Vegas with authentic religious and spiritual supplies since 2015. 
-                From Santería candles to Wiccan herbs, we honor all traditions.
-            </p>
-            <p class="text-lg md:text-xl mb-6 es">
-                Sirviendo a Las Vegas con suministros religiosos y espirituales auténticos desde 2015.
-                Desde velas de Santería hasta hierbas de Wicca, honramos todas las tradiciones.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="/shop" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition en">
-                    Explore Our Shop
-                </a>
-                <a href="/belief-systems" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition en">
-                    View Traditions
-                </a>
-                
-                <a href="/shop" class="bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-full transition es">
-                    Explorar Tienda
-                </a>
-                <a href="/belief-systems" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-full transition es">
-                    Ver Tradiciones
-                </a>
-            </div>
+        <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 max-w-3xl mx-auto mb-8 animate__animated animate__fadeInUp">
+            <!-- Rest of your existing hero content -->
+            [Keep all your existing buttons and text here]
         </div>
         
-        <div class="flex justify-center mt-8">
+        <div class="flex justify-center mt-8 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="bg-blue-900 p-4 rounded-full floating">
                 <i class="fas fa-arrow-down text-white text-2xl"></i>
+            </div>
+        </div>
+    </div>
+</section>
             </div>
         </div>
     </div>
