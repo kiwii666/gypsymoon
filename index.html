@@ -15,17 +15,44 @@
             --accent-gold: #d4af37;
         }
         
-        .hero-bg {
-            background: 
-                linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%),
-                url('https://i.imgur.com/XYZ1234.jpg'), /* Replace with your collage image */
-                url('https://i.imgur.com/ABC5678.jpg'); /* Optional second layer */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-blend-mode: multiply;
-            position: relative;
-            overflow: hidden;
+        <style>
+    /* Update the hero-bg class to use your images */
+    .hero-bg {
+        background: 
+            linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 139, 0.7) 100%),
+            url('images/background stock images/buddha 2.jpg'),
+            url('images/background stock images/buddha.jpg'),
+            url('images/background stock images/chirst.jpg'),
+            url('images/background stock images/death.jpg'),
+            url('images/background stock images/wicaan.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Remove or comment out the existing ::after pseudo-element as we'll use your images directly */
+    /*
+    .hero-bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80') center/cover no-repeat,
+            url('https://images.unsplash.com/photo-1563387852576-964bc31d744d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80') center/cover no-repeat,
+            url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80') center/cover no-repeat;
+        background-blend-mode: overlay;
+        opacity: 0.15;
+        mix-blend-mode: multiply;
+        z-index: -1;
+    }
+    */
+</style>
         }
 
         .hero-bg::before {
