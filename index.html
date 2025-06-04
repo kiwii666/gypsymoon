@@ -948,91 +948,35 @@ body.spanish .es { display: block; }
         </div>
     </footer>
 
-    <script>
+    
+
+<script>
+    function switchLanguage(lang) {
+        document.body.classList.toggle('spanish', lang === 'es');
+        localStorage.setItem('preferredLanguage', lang);
+
+        document.getElementById('lang-en').classList.toggle('language-active', lang === 'en');
+        document.getElementById('lang-es').classList.toggle('language-active', lang === 'es');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        switchLanguage(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+        document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
+
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            const isHidden = menu.classList.contains('hidden');
-            
-            if (isHidden) {
-                menu.classList.remove('hidden');
-                menu.classList.add('block');
-            } else {
-                menu.classList.remove('block');
-                menu.classList.add('hidden');
-            }
-        });
-        
-      // Language switch function
-function switchLanguage(lang) {
-    console.log('Switching to:', lang); // Debug line
-    
-    // Toggle body class
-    document.body.classList.toggle('spanish', lang === 'es');
-    
-    // Update button states
-    document.getElementById('lang-en').classList.toggle('language-active', lang === 'en');
-    document.getElementById('lang-es').classList.toggle('language-active', lang === 'es');
-    
-    // Store preference
-    localStorage.setItem('preferredLanguage', lang);
-}
-
-// Event listeners for buttons
-document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
-document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
-
-// Initialize language
-document.addEventListener('DOMContentLoaded', function() {
-    const lang = localStorage.getItem('preferredLanguage') || 'en';
-    switchLanguage(lang);
-});
-        }
-        
-        // Item click handlers
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const title = this.querySelector('h3').textContent;
-                const desc = document.body.classList.contains('spanish') 
-                    ? 'Información detallada sobre este artículo'
-                    : 'Detailed information about this item';
-                
-                alert(`${title}\n\n${desc}`);
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('block');
             });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    <script>
-        function switchLanguage(lang) {
-            document.body.classList.toggle('spanish', lang === 'es');
-            localStorage.setItem('preferredLanguage', lang);
-            
-            document.getElementById('lang-en').classList.toggle('language-active', lang === 'en');
-            document.getElementById('lang-es').classList.toggle('language-active', lang === 'es');
         }
+    });
+</script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            switchLanguage(savedLang);
-            
-            document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
-            document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
-        });
-    </script>
 </body>
 </html>
