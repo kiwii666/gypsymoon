@@ -102,27 +102,22 @@
     z-index: 2;
 }
         /* ===== ADD LANGUAGE TOGGLE STYLES HERE ===== */
-        /* Base language visibility */
-        .en {
-            display: block;
-        }
-        .es {
-            display: none;
-        }
-        
-        /* Spanish language overrides */
-        body.spanish .en {
-            display: none;
-        }
-        body.spanish .es {
-            display: block;
-        }
-        
-        /* Active language button styling */
-        .language-active {
-            background-color: var(--primary-red);
-            color: white;
-        }
+       /* Language visibility */
+.en { display: block; }
+.es { display: none; }
+
+body.spanish .en { display: none; }
+body.spanish .es { display: block; }
+
+/* Button styling */
+.language-switch {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.language-active {
+    background-color: var(--primary-red);
+    color: white;
+}
 </style>
 </head>
 <body class="bg-gray-50">
