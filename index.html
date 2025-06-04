@@ -122,9 +122,9 @@ body.spanish .es { display: block; }
 </head>
 <body class="bg-gray-50">
     <!-- Language Switcher -->
-    <div class="fixed top-4 right-4 z-50 flex space-x-2 rounded-full overflow-hidden shadow-lg bg-white">
-        <button id="lang-en" class="language-switch language-active px-4 py-2 font-medium">English</button>
-        <button id="lang-es" class="language-switch px-4 py-2 font-medium">Español</button>
+    <div class="language-switcher">
+        <button id="lang-en" class="language-active">English</button>
+        <button id="lang-es">Español</button>
     </div>
 
     <!-- Navigation -->
@@ -1016,6 +1016,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             });
+        });
+    <script>
+        function switchLanguage(lang) {
+            document.body.classList.toggle('spanish', lang === 'es');
+            localStorage.setItem('preferredLanguage', lang);
+            
+            document.getElementById('lang-en').classList.toggle('language-active', lang === 'en');
+            document.getElementById('lang-es').classList.toggle('language-active', lang === 'es');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(savedLang);
+            
+            document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+            document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
         });
     </script>
 </body>
