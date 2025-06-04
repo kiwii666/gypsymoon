@@ -16,14 +16,14 @@
         }
         
        <style>
-    .hero-bg {
+    ..hero-bg {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.6) 0%, rgba(0, 0, 139, 0.6) 100%);
+    background: radial-gradient(circle at center, rgba(139, 0, 0, 0.6) 0%, rgba(0, 0, 139, 0.8) 100%);
 }
 
 .hero-collage {
@@ -33,47 +33,65 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2px;
+    place-items: center;
     z-index: 0;
 }
 
 .collage-img {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 28%;
+    height: 28%;
     object-fit: cover;
-    transition: all 0.4s ease;
-    filter: brightness(0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    filter: brightness(0.85) saturate(1.1);
 }
 
-/* Tight collage layout with overlapping images */
-.img1 { grid-area: 1 / 1 / span 2 / span 2; transform: rotate(-2deg); }
-.img2 { grid-area: 1 / 3 / span 1 / span 2; transform: rotate(1deg); }
-.img3 { grid-area: 2 / 2 / span 2 / span 2; transform: rotate(3deg); z-index: 1; }
-.img4 { grid-area: 3 / 1 / span 1 / span 2; transform: rotate(-1deg); }
-.img5 { grid-area: 2 / 4 / span 2 / span 1; transform: rotate(2deg); }
-.img6 { grid-area: 1 / 4 / span 1 / span 1; transform: rotate(-3deg); }
-.img7 { grid-area: 3 / 3 / span 1 / span 2; transform: rotate(1deg); }
+/* Logo as centerpiece */
+.img-logo {
+    width: 30%;
+    height: auto;
+    max-height: 40%;
+    z-index: 10;
+    filter: brightness(1) drop-shadow(0 0 10px var(--accent-gold));
+    border: 3px solid var(--accent-gold);
+    border-radius: 50%;
+    animation: pulse 4s infinite alternate;
+}
+
+/* Radial positioning for other images */
+.img1 { top: 15%; left: 10%; transform: rotate(-5deg); }
+.img2 { top: 10%; right: 10%; transform: rotate(3deg); }
+.img3 { bottom: 15%; left: 12%; transform: rotate(-2deg); }
+.img4 { bottom: 10%; right: 12%; transform: rotate(5deg); }
+.img5 { top: 50%; left: 5%; transform: translateY(-50%) rotate(-3deg); }
+.img6 { top: 50%; right: 5%; transform: translateY(-50%) rotate(2deg); }
+.img7 { top: 25%; left: 50%; transform: translateX(-50%) rotate(4deg); }
+.img8 { bottom: 25%; left: 50%; transform: translateX(-50%) rotate(-4deg); }
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px var(--accent-gold); }
+    100% { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-gold); }
+}
 
 .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 20;
     text-align: center;
     padding: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 1200px;
-    margin: 0 auto;
 }
 
-/* Text styling enhancement */
 .hero-content h1 {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
     display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
 }
 </style>
 </head>
@@ -144,9 +162,14 @@
    <!-- Hero Section -->
 <!-- Hero Section -->
 <!-- Hero Section -->
+<!-- Hero Section -->
 <section id="home" class="hero-bg">
-    <!-- Tight image collage with 7 images -->
+    <!-- Radial collage with logo centerpiece -->
     <div class="hero-collage">
+        <!-- Logo as center focus -->
+        <img src="images/background stock images/logo.jpg" alt="Gypsy Moon Logo" class="collage-img img-logo">
+        
+        <!-- Surrounding spiritual images -->
         <img src="images/background stock images/buddha 2.jpg" alt="Buddha" class="collage-img img1">
         <img src="images/background stock images/buddha.jpg" alt="Buddha" class="collage-img img2">
         <img src="images/background stock images/japan.jpg" alt="Japanese" class="collage-img img3">
@@ -164,6 +187,11 @@
         <h1 class="text-4xl md:text-6xl font-bold mb-6 es animate__animated animate__fadeIn">
             Productos Espirituales para Todos los Caminos
         </h1>
+        
+        <!-- Rest of your hero content remains unchanged -->
+        [Your existing buttons and text content]
+    </div>
+</section>
         
         <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 max-w-3xl mx-auto mb-8 animate__animated animate__fadeInUp">
             <!-- Rest of your existing hero content -->
