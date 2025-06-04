@@ -496,15 +496,11 @@
         </div>
     </div>
 </section>
- <!-- Gallery Section - 15 Images -->
+<!-- Gallery Section with Lightbox -->
 <section id="gallery" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 en">
-            Gallery
-        </h2>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 es">
-            Galería
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 en">Gallery</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 es">Galería</h2>
         
         <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto en">
             Browse through our collection of spiritual goods and sacred spaces
@@ -514,56 +510,55 @@
         </p>
         
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 px-4">
-            <!-- Gallery Items - 15 slots -->
-            <div class="gallery-item">
+            <!-- Your 15 Gallery Items - Now with Lightbox Functionality -->
+            <div class="gallery-item cursor-pointer">
                 <img src="images/big display.jpg" alt="Buddha Statue" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item cursor-pointer">
                 <img src="images/candles.jpg" alt="Ritual Candles" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/beads.jpg" alt="Healing Crystals" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/beads.jpg" alt="Prayer Beads" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/doll.jpg" alt="Sacred Incense" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/doll.jpg" alt="Spiritual Doll" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/motherearthdisplay.jpg" alt="Prayer Mala" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/motherearthdisplay.jpg" alt="Mother Earth Display" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/jadebuddha.jpg" alt="Decorative Rosary" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/jadebuddha.jpg" alt="Jade Buddha" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/muerte.jpg" alt="Santa Muerte Altar" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/muerte.jpg" alt="Santa Muerte" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/angelcandles.jpg" alt="Tarot Cards" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/angelcandles.jpg" alt="Angel Candles" class="w-full h-48 object-cover rounded-lg">
             </div>
-            
-            <!-- Empty slots (add your additional 7 images here) -->
-            <div class="gallery-item">
-                <img src="images/blackdisplay.jpg" alt="Item 9" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/blackdisplay.jpg" alt="Black Display" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/rockdisplay.jpg" alt="Item 10" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/rockdisplay.jpg" alt="Rock Display" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/doll2.jpg" alt="Item 11" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/doll2.jpg" alt="Ceremonial Doll" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/christiandisplay.jpg" alt="Item 12" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/christiandisplay.jpg" alt="Christian Display" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/girlstatues.jpg" alt="Item 13" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/girlstatues.jpg" alt="Girl Statues" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/beads3.jpg" alt="Item 14" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/beads3.jpg" alt="Decorative Beads" class="w-full h-48 object-cover rounded-lg">
             </div>
-            <div class="gallery-item">
-                <img src="images/malverde.jpg" alt="Item 15" class="w-full h-48 object-cover rounded-lg">
+            <div class="gallery-item cursor-pointer">
+                <img src="images/malverde.jpg" alt="San Malverde" class="w-full h-48 object-cover rounded-lg">
             </div>
         </div>
     </div>
+</div>
 </section>
     <!-- About Us Section -->
     <section id="about" class="py-16 bg-gray-50">
@@ -871,5 +866,92 @@
             });
         });
     </script>
+    <!-- Lightbox HTML - Place before </body> -->
+<div id="lightbox" class="hidden fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center">
+    <button id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 transition">&times;</button>
+    <button id="prev-btn" class="absolute left-4 text-white text-4xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 transition">&#10094;</button>
+    <button id="next-btn" class="absolute right-4 text-white text-4xl bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 transition">&#10095;</button>
+    <img id="lightbox-img" class="max-w-[90vw] max-h-[90vh] object-contain" src="" alt="">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const closeBtn = document.getElementById('close-lightbox');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    let currentIndex = 0;
+    const images = Array.from(galleryItems).map(img => ({
+        src: img.src,
+        alt: img.alt
+    }));
+    
+    // Open lightbox
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            updateLightboxImage();
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Navigation functions
+    function updateLightboxImage() {
+        lightboxImg.src = images[currentIndex].src;
+        lightboxImg.alt = images[currentIndex].alt;
+    }
+    
+    function navigate(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        updateLightboxImage();
+    }
+    
+    // Event listeners
+    closeBtn.addEventListener('click', () => {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+    });
+    
+    prevBtn.addEventListener('click', () => navigate(-1));
+    nextBtn.addEventListener('click', () => navigate(1));
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('hidden')) {
+            if (e.key === 'ArrowLeft') navigate(-1);
+            if (e.key === 'ArrowRight') navigate(1);
+            if (e.key === 'Escape') closeBtn.click();
+        }
+    });
+    
+    // Close when clicking outside image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeBtn.click();
+        }
+    });
+});
+</script>
+
+<style>
+    .hidden { display: none !important; }
+    #lightbox {
+        transition: opacity 0.3s ease;
+    }
+    #lightbox-img {
+        transition: transform 0.2s ease;
+    }
+    .gallery-item img {
+        transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+        transform: scale(1.03);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+</style>
 </body>
 </html>
