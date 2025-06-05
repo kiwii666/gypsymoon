@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-red: #191970;
@@ -617,19 +618,21 @@ footer {
     </div>
 </section>
 <!-- Gallery Section with Lightbox -->
-<section id="gallery" class="py-16 bg-white">
+<section id="gallery" class="py-16" style="background-color: transparent;">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 en">Gallery</h2>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 es">Galería</h2>
-        
-        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto en">
+        <!-- English Header -->
+        <h2 class="section-header en">Gallery</h2>
+        <p class="section-subheader en">
             Browse through our collection of spiritual goods and sacred spaces
         </p>
-        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto es">
+        
+        <!-- Spanish Header -->
+        <h2 class="section-header es">Galería</h2>
+        <p class="section-subheader es">
             Explora nuestra colección de productos espirituales y espacios sagrados
         </p>
         
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 px-4">
+         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 px-4">
             <!-- Your 15 Gallery Items - Now with Lightbox Functionality -->
             <div class="gallery-item cursor-pointer">
                 <img src="images/big display.jpg" alt="Buddha Statue" class="w-full h-48 object-cover rounded-lg">
@@ -680,156 +683,110 @@ footer {
     </div>
 </div>
 </section>
-    <!-- About Us Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="images/background stock images/logo.jpeg" 
-                         alt="Gypsy Moon Store" 
-                         class="rounded-lg shadow-xl h-auto w-full">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900 en">
-                        Our Story in Las Vegas
-                    </h2>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900 es">
-                        Nuestra Historia en Las Vegas
-                    </h2>
-                    
-                    <p class="text-gray-700 mb-4 en">
-                        Founded in 2015 by Maria Fernandez, Gypsy Moon began as a small booth at the downtown arts market. 
-                        Maria, a daughter of Cuban immigrants, wanted to share the spiritual traditions of her ancestors 
-                        while also respecting all paths to the divine.
-                    </p>
-                    <p class="text-gray-700 mb-4 es">
-                        Fundada en 2015 por María Fernández, Luna Gitana comenzó como un pequeño puesto en el mercado de arte del centro.
-                        María, hija de inmigrantes cubanos, quería compartir las tradiciones espirituales de sus antepasados
-                        mientras también respetaba todos los caminos hacia lo divino.
-                    </p>
-                    
-                    <p class="text-gray-700 mb-6 en">
-                        What started as a passion project has grown into Las Vegas' premier spiritual supply store, 
-                        serving practitioners from all backgrounds with authentic, ethically-sourced spiritual goods.
-                    </p>
-                    <p class="text-gray-700 mb-6 es">
-                        Lo que comenzó como un proyecto de pasión se ha convertido en la principal tienda de suministros espirituales de Las Vegas,
-                        sirviendo a practicantes de todos los orígenes con productos espirituales auténticos y obtenidos éticamente.
-                    </p>
-                    
-                 
-                    </div>
-                </div>
+  <!-- About Us Section -->
+<section id="about" class="py-16" style="background-color: transparent;">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="images/background stock images/logo.jpeg" 
+                     alt="Gypsy Moon Store" 
+                     class="rounded-lg shadow-xl h-auto w-full">
             </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900 en">
-                        Visit Us in Las Vegas
-                    </h2>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900 es">
-                        Visítanos en Las Vegas
-                    </h2>
-                    
-                    <div class="mb-8">
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-map-marker-alt text-red-800 text-xl mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold text-gray-800">
-                                    1720 E Charleston Blvd Suit # F17<br>
-                                    Las Vegas, NV 89104
-                                </p>
-                                <p class="text-sm text-gray-500 en">
-                                   
-                                </p>
-                                <p class="text-sm text-gray-500 es">
-                                   
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-clock text-red-800 text-xl mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold text-gray-800">
-                                    <span class="en">Hours:</span>
-                                    <span class="es">Horario:</span>
-                                </p>
-                                <p class="text-sm text-gray-500">
-                                    Wed-Mon: 10:30am - 6:30pm<br>
-                            
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-phone-alt text-red-800 text-xl mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold text-gray-800">(725) 529-4905</p>
-                                <p class="text-sm text-gray-500 en">
-                                    
-                                </p>
-                                <p class="text-sm text-gray-500 es">
-                                  
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                        <h3 class="font-bold text-lg mb-3 text-blue-900 en">
-                            Send Us a Message
-                        </h3>
-                        <h3 class="font-bold text-lg mb-3 text-blue-900 es">
-                            Envíanos un Mensaje
-                        </h3>
-                        
-                        <form>
-                            <div class="mb-4">
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1 en">Name</label>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1 es">Nombre</label>
-                                <input type="text" id="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800">
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800">
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1 en">Message</label>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1 es">Mensaje</label>
-                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-6 rounded-full transition en">
-                                Send Message
-                            </button>
-                            <button type="submit" class="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-6 rounded-full transition es">
-                                Enviar Mensaje
-                            </button>
-                        </form>
-                    </div>
+            <div class="md:w-1/2">
+                <!-- English Version -->
+                <h2 class="section-header en">Our Story in Las Vegas</h2>
+                <div class="story-text en">
+                    <p>Founded in 2015 by Maria Fernandez, Gypsy Moon began as a small booth at the downtown arts market. Maria, a daughter of Cuban immigrants, wanted to share the spiritual traditions of her ancestors while also respecting all paths to the divine.</p>
+                    <p>What started as a passion project has grown into Las Vegas' premier spiritual supply store, serving practitioners from all backgrounds with authentic, ethically-sourced spiritual goods.</p>
                 </div>
                 
-                <div class="md:w-1/2 h-96 md:h-auto">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102610.86547190244!2d-115.29738289453123!3d36.09221510000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c7a87e8b4f4d%3A0xec5b8e9a8e9e2e8e!2sLas%20Vegas%2C%20NV%2C%20USA!5e0!3m2!1sen!2s!4v1689782521539!5m2!1sen!2s" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            class="rounded-lg shadow-lg"></iframe>
+                <!-- Spanish Version -->
+                <h2 class="section-header es">Nuestra Historia en Las Vegas</h2>
+                <div class="story-text es">
+                    <p>Fundada en 2015 por María Fernández, Luna Gitana comenzó como un pequeño puesto en el mercado de arte del centro. María, hija de inmigrantes cubanos, quería compartir las tradiciones espirituales de sus antepasados mientras también respetaba todos los caminos hacia lo divino.</p>
+                    <p>Lo que comenzó como un proyecto de pasión se ha convertido en la principal tienda de suministros espirituales de Las Vegas, sirviendo a practicantes de todos los orígenes con productos espirituales auténticos y obtenidos éticamente.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+    <!-- Contact & Location -->
+<section id="contact" class="py-16" style="background-color: transparent;">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <!-- English Contact Info -->
+                <h2 class="section-header en">Visit Us in Las Vegas</h2>
+                <div class="contact-info en">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>1720 E Charleston Blvd Suit # F17<br>Las Vegas, NV 89104</p>
+                    
+                    <div class="hours">
+                        <p><i class="fas fa-clock mr-2"></i>Hours:</p>
+                        <p>Wed-Mon: 10:30am - 6:30pm</p>
+                    </div>
+                    
+                    <p><i class="fas fa-phone-alt mr-2"></i>(725) 529-4905</p>
+                </div>
+                
+                <!-- Spanish Contact Info -->
+                <h2 class="section-header es">Visítanos en Las Vegas</h2>
+                <div class="contact-info es">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>1720 E Charleston Blvd Suit # F17<br>Las Vegas, NV 89104</p>
+                    
+                    <div class="hours">
+                        <p><i class="fas fa-clock mr-2"></i>Horario:</p>
+                        <p>Mié-Lun: 10:30am - 6:30pm</p>
+                    </div>
+                    
+                    <p><i class="fas fa-phone-alt mr-2"></i>(725) 529-4905</p>
+                </div>
+                
+                <!-- Contact Form (Bilingual) -->
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mt-8" style="background-color: rgba(255,255,255,0.1); backdrop-filter: blur(5px);">
+                    <h3 class="font-bold text-lg mb-3 text-white en">Send Us a Message</h3>
+                    <h3 class="font-bold text-lg mb-3 text-white es">Envíanos un Mensaje</h3>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-white mb-1 en">Name</label>
+                            <label class="block text-sm font-medium text-white mb-1 es">Nombre</label>
+                            <input type="text" class="w-full px-3 py-2 bg-white bg-opacity-20 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-white">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-white mb-1">Email</label>
+                            <input type="email" class="w-full px-3 py-2 bg-white bg-opacity-20 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-white">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-white mb-1 en">Message</label>
+                            <label class="block text-sm font-medium text-white mb-1 es">Mensaje</label>
+                            <textarea rows="3" class="w-full px-3 py-2 bg-white bg-opacity-20 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-white"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full transition en">
+                            Send Message
+                        </button>
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full transition es">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 h-96 md:h-auto">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102610.86547190244!2d-115.29738289453123!3d36.09221510000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c7a87e8b4f4d%3A0xec5b8e9a8e9e2e8e!2sLas%20Vegas%2C%20NV%2C%20USA!5e0!3m2!1sen!2s!4v1689782521539!5m2!1sen!2s" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        class="rounded-lg shadow-lg"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Newsletter -->
     
     <!-- Footer -->
