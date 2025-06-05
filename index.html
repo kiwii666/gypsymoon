@@ -191,10 +191,9 @@
     display: block;
 }
 
-/* ===== FINAL STAR BACKGROUND SOLUTION ===== */
+/* ===== CLEAN STAR BACKGROUND SOLUTION ===== */
 .flower-bg-section {
     position: relative;
-    overflow: hidden;
 }
 
 .flower-bg-section::before {
@@ -205,59 +204,49 @@
     right: 0;
     bottom: 0;
     background: url('./images/stars.jpg') center/cover no-repeat fixed;
-    opacity: 0.25;
+    opacity: 0.3; /* Slightly stronger visibility */
     z-index: -1;
     pointer-events: none;
 }
 
-/* Section Styling with Delicate Transparency */
-section {
-    position: relative;
-    z-index: 1;
-    padding: 3rem 0;
-    background-color: rgba(255,255,255,0.65);
-    margin-bottom: 1px; /* Creates hairline gap */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Individual Section Customization */
-#traditions {
-    background-color: rgba(0,0,0,0.35);
-    color: white;
-    margin-top: -1px; /* Seamless transition from hero */
-}
-
-#gallery {
-    background-color: rgba(255,255,255,0.75);
-}
-
-#about {
-    background-color: rgba(248,249,250,0.7);
-}
-
+/* Remove all section backgrounds */
+#traditions,
+#gallery,
+#about,
 #contact {
-    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    background-color: transparent; /* Complete transparency */
+    padding: 3rem 0;
 }
 
-/* Footer Styling */
+/* Text contrast solutions */
+#traditions {
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8); /* Better readability */
+}
+
+/* Gallery items stand out */
+.gallery-item {
+    background-color: rgba(255,255,255,0.15); /* Subtle card background */
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Footer keeps slight darkening */
 footer {
-    background-color: rgba(17,24,39,0.92);
+    background-color: rgba(17,24,39,0.85);
     color: white;
     padding: 3rem 0;
-    position: relative;
-    margin-top: -1px;
 }
 
-/* Decorative Section Dividers */
-section::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    margin: 0 auto;
-    width: 80%;
-    position: relative;
-    top: 1px;
+/* Content containers get subtle shadow */
+.content-card {
+    background-color: rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 </style>
         
