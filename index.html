@@ -33,6 +33,8 @@
         color: white;
         font-size: 1.5rem;
         cursor: pointer;
+        position: relative;
+        z-index: 101; 
     }
     
    #nav-links {  /* Changed from .nav-links to #nav-links */
@@ -54,7 +56,7 @@
         animation: fadeIn 0.3s ease;
     }
     
-    .nav-links a {
+       #nav-links a {
         padding: 12px 16px;
         color: white;
         text-decoration: none;
@@ -63,14 +65,15 @@
         transition: all 0.3s ease;
     }
     
-    .nav-links a:last-child {
+    #nav-links a:last-child {
         border-bottom: none;
     }
     
-    .nav-links a:hover {
+    #nav-links a:hover {
         color: var(--accent-gold);
         background: rgba(255,255,255,0.05);
     }
+}
     
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(-10px); }
@@ -1040,68 +1043,60 @@
     </div>
 
     <script>
-      // Mobile menu toggle - this should work as is
-document.getElementById('mobile-menu-button').addEventListener('click', function() {
-    document.getElementById('nav-links').classList.toggle('active');
-});
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-links').classList.remove('active');
-            });
-        });
-        
-        // Mobile language toggle
-        document.getElementById('lang-en-mobile').addEventListener('click', () => switchLanguage('en'));
-        document.getElementById('lang-es-mobile').addEventListener('click', () => switchLanguage('es'));
-        
-        // Language switch function
-         // Language switch function - Updated to handle nav links
-        function switchLanguage(lang) {
-            document.body.classList.toggle('spanish', lang === 'es');
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Update language switch buttons
-            document.querySelectorAll('.language-switch').forEach(button => {
-                button.classList.toggle('language-active', 
-                    (button.id.includes('en') && lang === 'en') || 
-                    (button.id.includes('es') && lang === 'es'));
-            });
-            
-            // Show/hide nav links based on language
-            document.querySelectorAll('.nav-link').forEach(link => {
-                if (link.classList.contains('en')) {
-                    link.style.display = lang === 'en' ? 'block' : 'none';
-                } else if (link.classList.contains('es')) {
-                    link.style.display = lang === 'es' ? 'block' : 'none';
-                }
-            });
+// Language switch function
+function switchLanguage(lang) {
+    document.body.classList.toggle('spanish', lang === 'es');
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Update language switch buttons
+    document.querySelectorAll('.language-switch').forEach(button => {
+        button.classList.toggle('language-active', 
+            (button.id.includes('en') && lang === 'en') || 
+            (button.id.includes('es') && lang === 'es'));
+    });
+    
+    // Show/hide nav links based on language
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.classList.contains('en')) {
+            link.style.display = lang === 'en' ? 'block' : 'none';
+        } else if (link.classList.contains('es')) {
+            link.style.display = lang === 'es' ? 'block' : 'none';
         }
+    });
+}
 
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set initial language
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            switchLanguage(savedLang);
-            
-            // Add click handlers for language switchers
-            document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
-            document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
-            document.getElementById('lang-en-mobile').addEventListener('click', () => switchLanguage('en'));
-            document.getElementById('lang-es-mobile').addEventListener('click', () => switchLanguage('es'));
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+    // Set initial language
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    switchLanguage(savedLang);
+    
+    // Language switchers
+    document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+    document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
+    document.getElementById('lang-en-mobile').addEventListener('click', () => switchLanguage('en'));
+    document.getElementById('lang-es-mobile').addEventListener('click', () => switchLanguage('es'));
 
-            // Mobile menu toggle
-            document.getElementById('mobile-menu-button').addEventListener('click', function() {
-                document.getElementById('nav-links').classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('#nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    document.getElementById('nav-links').classList.remove('active');
-                });
-            });
+    // Mobile menu toggle - ONLY THIS ONE INSTANCE
+    document.getElementById('mobile-menu-button').addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        document.getElementById('nav-links').classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('nav-links').classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('#nav-links') && !e.target.closest('#mobile-menu-button')) {
+            document.getElementById('nav-links').classList.remove('active');
+        }
+    });
+
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
