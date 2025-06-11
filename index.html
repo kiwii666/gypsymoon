@@ -392,54 +392,57 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Compact Mobile Navigation -->
+    <!-- Fixed Navigation Menu -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-70 py-3 md:py-4">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <!-- Mobile Menu Button -->
-            <div class="mobile-menu flex items-center">
+            <!-- Mobile Menu Button - Only shows on mobile -->
+            <div class="md:hidden flex items-center">
                 <button id="mobile-menu-button" class="text-white text-2xl mr-4">
                     <i class="fas fa-bars"></i>
                 </button>
+                <!-- Single language switcher for mobile -->
                 <div class="language-switcher-container flex space-x-2">
                     <button id="lang-en-mobile" class="language-switch language-active px-3 py-1 text-sm font-bold text-white">EN</button>
                     <button id="lang-es-mobile" class="language-switch px-3 py-1 text-sm font-bold text-white">ES</button>
                 </div>
             </div>
             
-            <!-- Desktop Menu -->
-            <div class="desktop-menu flex items-center space-x-4">
-                <a href="#traditions" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl en">Traditions</a>
-                <a href="#traditions" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl es">Tradiciones</a>
+              <!-- Desktop Menu - Only shows on desktop -->
+            <div class="hidden md:flex items-center space-x-4">
+                <!-- These will show only the current language -->
+                <a href="#traditions" class="nav-link en bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Traditions</a>
+                <a href="#traditions" class="nav-link es bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Tradiciones</a>
                 
-                <a href="#gallery" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl en">Gallery</a>
-                <a href="#gallery" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl es">Galería</a>
+                <a href="#gallery" class="nav-link en bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Gallery</a>
+                <a href="#gallery" class="nav-link es bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Galería</a>
                 
-                <a href="#about" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl en">About</a>
-                <a href="#about" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl es">Nosotros</a>
+                <a href="#about" class="nav-link en bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">About</a>
+                <a href="#about" class="nav-link es bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Nosotros</a>
                 
-                <a href="#contact" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl en">Contact</a>
-                <a href="#contact" class="bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-4 py-2 md:px-6 md:py-3 rounded-lg text-lg md:text-xl font-bold transition-all duration-300 shadow-xl es">Contacto</a>
+                <a href="#contact" class="nav-link en bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Contact</a>
+                <a href="#contact" class="nav-link es bg-black bg-opacity-70 hover:bg-opacity-90 text-white hover:text-yellow-300 px-6 py-3 rounded-lg text-xl font-bold transition-all duration-300 shadow-xl">Contacto</a>
             </div>
             
-            <!-- Desktop Language Switcher -->
-            <div class="desktop-language-switcher absolute right-4 flex items-center space-x-2 bg-black bg-opacity-70 hover:bg-opacity-90 rounded-full px-4 py-2 transition-all duration-300">
+            <!-- Desktop Language Switcher - Only shows on desktop -->
+            <div class="hidden md:flex items-center space-x-2 bg-black bg-opacity-70 hover:bg-opacity-90 rounded-full px-4 py-2 transition-all duration-300">
                 <button id="lang-en" class="language-switch language-active px-3 py-1 text-lg font-bold text-white">English</button>
                 <button id="lang-es" class="language-switch px-3 py-1 text-lg font-bold text-white">Español</button>
             </div>
             
             <!-- Mobile Navigation Links (hidden by default) -->
             <div id="nav-links" class="nav-links">
-                <a href="#traditions" class="block py-3 text-white hover:text-yellow-300 text-center en">Traditions</a>
-                <a href="#traditions" class="block py-3 text-white hover:text-yellow-300 text-center es">Tradiciones</a>
+                <!-- These will show only the current language -->
+                <a href="#traditions" class="nav-link en block py-3 text-white hover:text-yellow-300 text-center">Traditions</a>
+                <a href="#traditions" class="nav-link es block py-3 text-white hover:text-yellow-300 text-center">Tradiciones</a>
                 
-                <a href="#gallery" class="block py-3 text-white hover:text-yellow-300 text-center en">Gallery</a>
-                <a href="#gallery" class="block py-3 text-white hover:text-yellow-300 text-center es">Galería</a>
+                <a href="#gallery" class="nav-link en block py-3 text-white hover:text-yellow-300 text-center">Gallery</a>
+                <a href="#gallery" class="nav-link es block py-3 text-white hover:text-yellow-300 text-center">Galería</a>
                 
-                <a href="#about" class="block py-3 text-white hover:text-yellow-300 text-center en">About</a>
-                <a href="#about" class="block py-3 text-white hover:text-yellow-300 text-center es">Nosotros</a>
+                <a href="#about" class="nav-link en block py-3 text-white hover:text-yellow-300 text-center">About</a>
+                <a href="#about" class="nav-link es block py-3 text-white hover:text-yellow-300 text-center">Nosotros</a>
                 
-                <a href="#contact" class="block py-3 text-white hover:text-yellow-300 text-center en">Contact</a>
-                <a href="#contact" class="block py-3 text-white hover:text-yellow-300 text-center es">Contacto</a>
+                <a href="#contact" class="nav-link en block py-3 text-white hover:text-yellow-300 text-center">Contact</a>
+                <a href="#contact" class="nav-link es block py-3 text-white hover:text-yellow-300 text-center">Contacto</a>
             </div>
         </div>
     </nav>
@@ -1008,15 +1011,25 @@
         document.getElementById('lang-es-mobile').addEventListener('click', () => switchLanguage('es'));
         
         // Language switch function
+         // Language switch function - Updated to handle nav links
         function switchLanguage(lang) {
             document.body.classList.toggle('spanish', lang === 'es');
             localStorage.setItem('preferredLanguage', lang);
             
-            // Update all language switches
+            // Update language switch buttons
             document.querySelectorAll('.language-switch').forEach(button => {
                 button.classList.toggle('language-active', 
                     (button.id.includes('en') && lang === 'en') || 
                     (button.id.includes('es') && lang === 'es'));
+            });
+            
+            // Show/hide nav links based on language
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.classList.contains('en')) {
+                    link.style.display = lang === 'en' ? 'block' : 'none';
+                } else if (link.classList.contains('es')) {
+                    link.style.display = lang === 'es' ? 'block' : 'none';
+                }
             });
         }
 
@@ -1026,9 +1039,23 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             switchLanguage(savedLang);
             
-            // Add click handlers for desktop language switcher
+            // Add click handlers for language switchers
             document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
             document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
+            document.getElementById('lang-en-mobile').addEventListener('click', () => switchLanguage('en'));
+            document.getElementById('lang-es-mobile').addEventListener('click', () => switchLanguage('es'));
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').addEventListener('click', function() {
+                document.getElementById('nav-links').classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('nav-links').classList.remove('active');
+                });
+            });
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
